@@ -1,0 +1,97 @@
+.input-group
+  display: inline-block
+  width: 100%
+  white-space: nowrap // Prevent buttons from wrapping in tight spaces
+  vertical-align: middle
+  letter-spacing: -0.31em
+  > *
+    letter-spacing: normal
+
+.input-group > input,
+.input-group > select,
+.input-group > button,
+.input-group > .input-group-addon,
+.input-group-vertical > input,
+.input-group-vertical > select,
+.input-group-vertical > button,
+.input-group-vertical > .input-group,
+.input-group-vertical > .input-group-addon
+  position: relative
+  vertical-align: top
+  // Border box sizing for consistent resizes
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:focus
+    z-index: 2
+
+.input-group > input,
+.input-group > select,
+.input-group > button,
+.input-group > .input-group-addon
+  display: inline-block
+  width: auto
+  margin: 0 0 0 -1px
+  &:first-child
+    margin-left: 0
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+  &:last-child
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+  &:not(:first-child):not(:last-child)
+    border-radius: 0
+
+// Vertical input groups - use seperately to avoid radii clashes
+.input-group-vertical > input,
+.input-group-vertical > select,
+.input-group-vertical > button,
+.input-group-vertical > .input-group,
+.input-group-vertical > .input-group-addon
+  display: block
+  width: 100%
+  margin: -1px 0 0
+  &:first-child
+    margin-top: 0
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  &:last-child
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+  &:not(:first-child):not(:last-child)
+    border-radius: 0
+
+.input-group-vertical > .input-group:first-child > input,
+.input-group-vertical > .input-group:first-child > select,
+.input-group-vertical > .input-group:first-child > button,
+.input-group-vertical > .input-group:first-child > .input-group-addon
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+
+.input-group-vertical > .input-group:last-child > input,
+.input-group-vertical > .input-group:last-child > select,
+.input-group-vertical > .input-group:last-child > button,
+.input-group-vertical > .input-group:last-child > .input-group-addon
+  border-top-left-radius: 0
+  border-top-right-radius: 0
+
+for selector in input-group-selectors
+  // Extend the groups children selectors
+  .input-group > {selector}
+    @extend .input-group > input
+  .input-group-vertical > {selector}
+    @extend .input-group-vertical > input
+  .input-group-vertical > .input-group:first-child > {selector}
+    @extend .input-group-vertical > .input-group:first-child > input
+  .input-group-vertical > .input-group:last-child > {selector}
+    @extend .input-group-vertical > .input-group:last-child > input
+
+.input-group-addon
+  padding: 0.25em 0.45em
+  text-align: center
+  text-shadow: 0 1px 0 white
+  border: 1px solid input-group-addon-border
+  background: input-group-addon-background
+  border-radius: input-group-addon-border-radius
+  > input[type="radio"],
+  > input[type="checkbox"]
+    vertical-align: top

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>Input Groups</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="components/pinch-grid/grid.css">
+    <link rel="stylesheet" href="components/awesome-form/form.css">
+    <link rel="stylesheet" href="components/style-buttons/buttons.css">
+    <link rel="stylesheet" href="components/default-typography/typography.css">
+    <link rel="stylesheet" href="input-groups.css">
+    <style>
+      .grid-container { max-width: 40em; }
+      .demo-grid { padding: 1em; }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group">
+            <button class="btn-success grid-span4">Success</button>
+            <button class="btn-warning grid-span4">Warning</button>
+            <button class="btn-danger grid-span4">Danger</button>
+          </div>
+        </div>
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group">
+            <input type="text">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group-vertical">
+            <div class="input-group">
+              <label class="input-group-addon grid-span4" for="username">Username</label>
+              <input id="username" type="text" class="grid-span8">
+            </div>
+            <div class="input-group">
+              <label class="input-group-addon grid-span4" for="password">Password</label>
+              <input id="password" type="password" class="grid-span8">
+            </div>
+          </div>
+        </div>
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group-vertical">
+            <span class="input-group-addon">Hi, my name is</span>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group">
+            <input type="text" class="grid-span4">
+            <button class="btn grid-span4">Search</button>
+            <button class="btn grid-span4">Options</button>
+          </div>
+        </div>
+        <div class="demo-grid grid-span grid-tablet-span6">
+          <div class="input-group">
+            <span class="input-group-addon"><input type="checkbox"> Awesome?</span>
+            <input type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

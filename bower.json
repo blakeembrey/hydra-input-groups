@@ -1,0 +1,14 @@
+{
+  "name": "hydra-input-groups",
+  "main": [
+    "./input-groups.css"
+  ],
+  "version": "0.0.2",
+  "dependencies": {},
+  "devDependencies": {
+    "hydra-typography": "latest",
+    "hydra-grid": "latest",
+    "hydra-form": "latest",
+    "hydra-buttons": "latest"
+  }
+}

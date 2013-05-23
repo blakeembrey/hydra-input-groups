@@ -1,0 +1,229 @@
+@import "../../components/stylus-type-utils"
+
+// General styles
+// -------------------------
+
+form
+  margin: 0 0 em(base-line-height)
+
+fieldset
+  margin: 0
+  border: 0
+  padding: 0
+
+legend
+  display: block
+  width: 100%
+  border: 0
+  margin: 0 0 em(base-line-height / 2)
+  padding: 0
+  color: form-legend-color
+  font-size: em(base-font-size * 1.5)
+  line-height: em(base-line-height * 1.5)
+  border-bottom: 1px solid #e5e5e5
+
+label
+  display: inline-block
+  margin-bottom: 0.35em
+  font-weight: bold
+
+
+
+// Form controls
+// -------------------------
+
+input,
+select,
+textarea
+  // Set to `box-sizing` since it is simpler
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+input,
+select,
+textarea
+  display: inline-block
+  width: 100%
+  margin: 0 0 em(base-line-height / 2)
+  padding: 0.3em 0.5em
+  color: form-input-color
+  font-size: 100%
+  line-height: base-line-height
+  font-weight: form-input-font-weight
+  font-family: inherit
+  text-transform: none
+  border: 1px solid form-input-border
+  min-height: ((em(base-font-size) * em(@line-height)) + em(@padding[0] * 2) + em(@border[0] * 2))
+  background: form-input-background
+  border-radius: form-input-border-radius
+
+// The `select` element needs special help with heights
+select
+  height: ((em(base-font-size) * em(base-line-height)) + 0.5em + em(2px))
+
+// Reset width of certain input types
+input[type="file"],
+input[type="image"],
+input[type="reset"],
+input[type="radio"],
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"]
+  width: auto
+
+input:focus,
+textarea:focus
+  outline: 0
+  border: 1px solid form-input-border-active
+
+input[type="radio"],
+input[type="checkbox"]
+  margin: 0.35em 0 0
+  margin-top: 1px \9
+  min-height: auto
+  line-height: normal
+
+textarea,
+select[size],
+select[multiple]
+  padding: 0.5em
+  height: auto
+  min-height: auto
+
+textarea
+  overflow: auto
+  vertical-align: top
+  resize: vertical
+
+// Focus for select, file, radio, and checkbox
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus
+  outline: thin dotted #333
+
+.control-group
+  margin-bottom: em(base-line-height / 2)
+
+
+// Placeholder
+// -------------------------
+
+input,
+textarea
+  for selector in ":-moz-placeholder" ":-ms-input-placeholder" "::-webkit-input-placeholder"
+    &{selector}
+      color: form-input-placeholder-color
+
+
+// Checkboxes and radios
+// -------------------------
+
+.radio,
+.checkbox
+  display: block
+  min-height: em(base-line-height)
+  padding-left: 1.4em
+  margin-bottom: em(base-line-height / 2)
+  label
+    margin-bottom: 0
+    font-weight: normal
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"],
+.radio-inline input[type="radio"],
+.checkbox-inline input[type="checkbox"]
+  float: left
+  margin-left: -1.4em
+
+.radio + .radio,
+.checkbox + .checkbox
+  margin-top: em((base-line-height / 4) * -1)
+
+.radio-inline,
+.checkbox-inline
+  display: inline-block
+  padding-top: 0.35em
+  padding-left: 1.4em
+  margin-bottom: 0
+  font-weight: normal
+  vertical-align: middle
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline
+  margin-top: 0
+  margin-left: 0.7em
+
+
+// Input sizes
+// -------------------------
+
+.input-mini
+  font-size: 70%
+.input-small
+  font-size: 90%
+.input-large
+  font-size: 115%
+
+
+
+// Disabled states
+// -------------------------
+
+input,
+button,
+select,
+textarea
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] &
+    cursor: not-allowed
+    opacity: form-input-opacity-disabled
+    background: form-input-background-disabled
+    pointer-events: none
+
+input[type="radio"],
+input[type="checkbox"]
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] &
+    background-color: transparent
+
+
+
+// Form feedback states
+// -------------------------
+
+.has-success
+  form-field-state(form-input-success-color, form-input-success-border, form-input-success-background)
+.has-warning
+  form-field-state(form-input-warning-color, form-input-warning-border, form-input-warning-background)
+.has-error
+  form-field-state(form-input-danger-color, form-input-danger-border, form-input-danger-background)
+
+// HTML5 invalid state (shares with `.has-error`)
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid
+  @extends .has-error .input-with-feedback
+
+// Form actions
+// -------------------------
+
+.form-actions
+  padding: em(base-line-height * 0.9) 1.4em em(base-line-height)
+  margin: em(base-line-height * 0.75) 0 0
+  border-top: 1px solid #ddd
+  box-shadow: inset 0 1px 0 white
+  background: form-actions-background
+  clearfix()
+
+
+// Help text
+// -------------------------
+
+.help-block
+  color: form-help-color
+  margin: 0.3em 0
+  display: block
+  vertical-align: top

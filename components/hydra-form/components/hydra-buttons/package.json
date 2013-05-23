@@ -1,16 +1,17 @@
 {
-  "name": "hydra-input-groups",
-  "version": "0.0.2",
-  "description": "Simple groups for inputs and buttons",
-  "main": "lib/input-groups.js",
+  "name": "hydra-buttons",
+  "version": "0.1.0",
+  "description": "Flat CSS Button Components",
+  "main": "lib/buttons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "",
   "keywords": [
-    "forms",
-    "inputs",
-    "groups"
+    "stylus",
+    "css",
+    "buttons",
+    "flat"
   ],
   "author": "Blake Embrey",
   "license": "MIT",

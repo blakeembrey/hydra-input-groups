@@ -1,0 +1,24 @@
+form-field-state(text-color, border-color, background-color)
+  .help-block,
+  .control-label
+    color: text-color
+  .input-with-feedback
+    color: text-color
+    border-color: border-color
+    &:focus,
+    &.focused
+      border-color: darken(border-color, 20%)
+      background-color: background-color
+    for selector in ":-moz-placeholder" ":-ms-input-placeholder" "::-webkit-input-placeholder"
+      &{selector}
+        color: lighten(text-color, 40%)
+
+// https://github.com/visionmedia/nib/blob/master/lib/nib/clearfix.styl
+clearfix()
+  &:before
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+  zoom: 1 if support-for-ie

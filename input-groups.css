@@ -1,6 +1,7 @@
 .input-group {
   display: inline-block;
   width: 100%;
+  min-height: 2.225em;
   white-space: nowrap;
   vertical-align: middle;
   letter-spacing: -0.31em;
@@ -24,6 +25,19 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.input-group > input:hover,
+.input-group > select:hover,
+.input-group > button:hover,
+.input-group > .input-group-addon:hover,
+.input-group-vertical > input:hover,
+.input-group-vertical > select:hover,
+.input-group-vertical > button:hover,
+.input-group-vertical > .input-group:hover,
+.input-group-vertical > .input-group-addon:hover,
+.input-group > .btn:hover,
+.input-group-vertical > .btn:hover {
+  z-index: 2;
+}
 .input-group > input:focus,
 .input-group > select:focus,
 .input-group > button:focus,
@@ -35,7 +49,7 @@
 .input-group-vertical > .input-group-addon:focus,
 .input-group > .btn:focus,
 .input-group-vertical > .btn:focus {
-  z-index: 2;
+  z-index: 3;
 }
 .input-group > input,
 .input-group > select,
@@ -124,11 +138,11 @@
   border-top-right-radius: 0;
 }
 .input-group-addon {
-  padding: 0.25em 0.45em;
+  padding: 0.3em 0.45em;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
-  border: 1px solid #b1b1b1;
-  background: #eee;
+  border: 1px solid #bdc3c7;
+  background: #ecf0f1;
   border-radius: 3px;
 }
 .input-group-addon > input[type="radio"],

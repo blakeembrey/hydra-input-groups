@@ -1,7 +1,12 @@
+@import "config"
+
 .input-group
   display: inline-block
   width: 100%
-  white-space: nowrap // Prevent buttons from wrapping in tight spaces
+  // Use a simple calculation to get the min-height based on the children
+  min-height: (em(base-line-height) + em(0.3em * 2) + em(1px * 2))
+  // Prevent buttons from wrapping in tight spaces
+  white-space: nowrap
   vertical-align: middle
   letter-spacing: -0.31em
   > *
@@ -18,11 +23,13 @@
 .input-group-vertical > .input-group-addon
   position: relative
   vertical-align: top
-  // Border box sizing for consistent resizes
+  // Border box sizing for consistent resizing
   -moz-box-sizing: border-box
   box-sizing: border-box
-  &:focus
+  &:hover
     z-index: 2
+  &:focus
+    z-index: 3
 
 .input-group > input,
 .input-group > select,
@@ -86,7 +93,7 @@ for selector in input-group-selectors
     @extend .input-group-vertical > .input-group:last-child > input
 
 .input-group-addon
-  padding: 0.25em 0.45em
+  padding: 0.3em 0.45em
   text-align: center
   text-shadow: 0 1px 0 white
   border: 1px solid input-group-addon-border
